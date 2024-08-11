@@ -1,7 +1,11 @@
 
 # Mat Design Colors
 
+![Mat Design Colors](./header_img.webp)
+
 `mat-design-colors` is a TypeScript utility library that provides easy access to the Material Design color palette. It allows developers to use Material Design colors with a simple and intuitive API.
+
+[![npm version](https://badge.fury.io/js/mat-design-colors.svg)](https://www.npmjs.com/package/mat-design-colors)
 
 ## Installation
 

@@ -1,0 +1,7 @@
+header_img.webp
+
+# Other files you might want to exclude
+node_modules/
+build/
+test/
+coverage/
