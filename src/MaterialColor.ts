@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * 
- * Copyright 2024 Sitharaj Seenivasan 
+ * Copyright 2025 Sitharaj Seenivasan 
  */
 
 import { ColorShade } from './ColorShade';
@@ -20,6 +20,27 @@ function isValidColorShade(key: string | symbol): key is keyof typeof ColorShade
   return typeof key === 'string' && key in ColorShade;
 }
 
+/**
+ * The complete Material Design color palette.
+ * 
+ * Contains all 19 color families from the Material Design color system,
+ * each with standard shades (50-900) and accent shades (A100, A200, A400, A700)
+ * where available.
+ * 
+ * @example
+ * ```typescript
+ * import { MaterialColor, ColorShade } from 'mat-design-colors';
+ * 
+ * // Access a color using the ColorShade enum
+ * const red500 = MaterialColor.RED[ColorShade.S500]; // "#F44336"
+ * 
+ * // Access an accent shade
+ * const pinkA200 = MaterialColor.PINK[ColorShade.SA200]; // "#FF4081"
+ * 
+ * // Invalid shades fallback to S50
+ * const fallback = MaterialColor.RED['invalid' as ColorShade]; // "#FFEBEE"
+ * ```
+ */
 export const MaterialColor = {
   RED: new Proxy<Record<ColorShade, string>>({
     [ColorShade.S50]: '#FFEBEE',

@@ -1,0 +1,384 @@
+/**
+ * Mat Design Colors - Documentation Script
+ * Interactive documentation for the Material Design color palette library
+ */
+
+// Material Design Colors Data
+const MaterialColor = {
+    RED: { S50: '#FFEBEE', S100: '#FFCDD2', S200: '#EF9A9A', S300: '#E57373', S400: '#EF5350', S500: '#F44336', S600: '#E53935', S700: '#D32F2F', S800: '#C62828', S900: '#B71C1C', SA100: '#FF8A80', SA200: '#FF5252', SA400: '#FF1744', SA700: '#D50000' },
+    PINK: { S50: '#FCE4EC', S100: '#F8BBD0', S200: '#F48FB1', S300: '#F06292', S400: '#EC407A', S500: '#E91E63', S600: '#D81B60', S700: '#C2185B', S800: '#AD1457', S900: '#880E4F', SA100: '#FF80AB', SA200: '#FF4081', SA400: '#F50057', SA700: '#C51162' },
+    PURPLE: { S50: '#F3E5F5', S100: '#E1BEE7', S200: '#CE93D8', S300: '#BA68C8', S400: '#AB47BC', S500: '#9C27B0', S600: '#8E24AA', S700: '#7B1FA2', S800: '#6A1B9A', S900: '#4A148C', SA100: '#EA80FC', SA200: '#E040FB', SA400: '#D500F9', SA700: '#AA00FF' },
+    DEEP_PURPLE: { S50: '#EDE7F6', S100: '#D1C4E9', S200: '#B39DDB', S300: '#9575CD', S400: '#7E57C2', S500: '#673AB7', S600: '#5E35B1', S700: '#512DA8', S800: '#4527A0', S900: '#311B92', SA100: '#B388FF', SA200: '#7C4DFF', SA400: '#651FFF', SA700: '#6200EA' },
+    INDIGO: { S50: '#E8EAF6', S100: '#C5CAE9', S200: '#9FA8DA', S300: '#7986CB', S400: '#5C6BC0', S500: '#3F51B5', S600: '#3949AB', S700: '#303F9F', S800: '#283593', S900: '#1A237E', SA100: '#8C9EFF', SA200: '#536DFE', SA400: '#3D5AFE', SA700: '#304FFE' },
+    BLUE: { S50: '#E3F2FD', S100: '#BBDEFB', S200: '#90CAF9', S300: '#64B5F6', S400: '#42A5F5', S500: '#2196F3', S600: '#1E88E5', S700: '#1976D2', S800: '#1565C0', S900: '#0D47A1', SA100: '#82B1FF', SA200: '#448AFF', SA400: '#2979FF', SA700: '#2962FF' },
+    LIGHT_BLUE: { S50: '#E1F5FE', S100: '#B3E5FC', S200: '#81D4FA', S300: '#4FC3F7', S400: '#29B6F6', S500: '#03A9F4', S600: '#039BE5', S700: '#0288D1', S800: '#0277BD', S900: '#01579B', SA100: '#80D8FF', SA200: '#40C4FF', SA400: '#00B0FF', SA700: '#0091EA' },
+    CYAN: { S50: '#E0F7FA', S100: '#B2EBF2', S200: '#80DEEA', S300: '#4DD0E1', S400: '#26C6DA', S500: '#00BCD4', S600: '#00ACC1', S700: '#0097A7', S800: '#00838F', S900: '#006064', SA100: '#84FFFF', SA200: '#18FFFF', SA400: '#00E5FF', SA700: '#00B8D4' },
+    TEAL: { S50: '#E0F2F1', S100: '#B2DFDB', S200: '#80CBC4', S300: '#4DB6AC', S400: '#26A69A', S500: '#009688', S600: '#00897B', S700: '#00796B', S800: '#00695C', S900: '#004D40', SA100: '#A7FFEB', SA200: '#64FFDA', SA400: '#1DE9B6', SA700: '#00BFA5' },
+    GREEN: { S50: '#E8F5E9', S100: '#C8E6C9', S200: '#A5D6A7', S300: '#81C784', S400: '#66BB6A', S500: '#4CAF50', S600: '#43A047', S700: '#388E3C', S800: '#2E7D32', S900: '#1B5E20', SA100: '#B9F6CA', SA200: '#69F0AE', SA400: '#00E676', SA700: '#00C853' },
+    LIGHT_GREEN: { S50: '#F1F8E9', S100: '#DCEDC8', S200: '#C5E1A5', S300: '#AED581', S400: '#9CCC65', S500: '#8BC34A', S600: '#7CB342', S700: '#689F38', S800: '#558B2F', S900: '#33691E', SA100: '#CCFF90', SA200: '#B2FF59', SA400: '#76FF03', SA700: '#64DD17' },
+    LIME: { S50: '#F9FBE7', S100: '#F0F4C3', S200: '#E6EE9C', S300: '#DCE775', S400: '#D4E157', S500: '#CDDC39', S600: '#C0CA33', S700: '#AFB42B', S800: '#9E9D24', S900: '#827717', SA100: '#F4FF81', SA200: '#EEFF41', SA400: '#C6FF00', SA700: '#AEEA00' },
+    YELLOW: { S50: '#FFFDE7', S100: '#FFF9C4', S200: '#FFF59D', S300: '#FFF176', S400: '#FFEE58', S500: '#FFEB3B', S600: '#FDD835', S700: '#FBC02D', S800: '#F9A825', S900: '#F57F17', SA100: '#FFFF8D', SA200: '#FFFF00', SA400: '#FFEA00', SA700: '#FFD600' },
+    AMBER: { S50: '#FFF8E1', S100: '#FFECB3', S200: '#FFE082', S300: '#FFD54F', S400: '#FFCA28', S500: '#FFC107', S600: '#FFB300', S700: '#FFA000', S800: '#FF8F00', S900: '#FF6F00', SA100: '#FFE57F', SA200: '#FFD740', SA400: '#FFC400', SA700: '#FFAB00' },
+    ORANGE: { S50: '#FFF3E0', S100: '#FFE0B2', S200: '#FFCC80', S300: '#FFB74D', S400: '#FFA726', S500: '#FF9800', S600: '#FB8C00', S700: '#F57C00', S800: '#EF6C00', S900: '#E65100', SA100: '#FFD180', SA200: '#FFAB40', SA400: '#FF9100', SA700: '#FF6D00' },
+    DEEP_ORANGE: { S50: '#FBE9E7', S100: '#FFCCBC', S200: '#FFAB91', S300: '#FF8A65', S400: '#FF7043', S500: '#FF5722', S600: '#F4511E', S700: '#E64A19', S800: '#D84315', S900: '#BF360C', SA100: '#FF9E80', SA200: '#FF6E40', SA400: '#FF3D00', SA700: '#DD2C00' },
+    BROWN: { S50: '#EFEBE9', S100: '#D7CCC8', S200: '#BCAAA4', S300: '#A1887F', S400: '#8D6E63', S500: '#795548', S600: '#6D4C41', S700: '#5D4037', S800: '#4E342E', S900: '#3E2723' },
+    GREY: { S50: '#FAFAFA', S100: '#F5F5F5', S200: '#EEEEEE', S300: '#E0E0E0', S400: '#BDBDBD', S500: '#9E9E9E', S600: '#757575', S700: '#616161', S800: '#424242', S900: '#212121' },
+    BLUE_GREY: { S50: '#ECEFF1', S100: '#CFD8DC', S200: '#B0BEC5', S300: '#90A4AE', S400: '#78909C', S500: '#607D8B', S600: '#546E7A', S700: '#455A64', S800: '#37474F', S900: '#263238' }
+};
+
+// Utility Functions
+function hexToRgb(hex) {
+    const cleanHex = hex.replace(/^#/, '');
+    const num = parseInt(cleanHex, 16);
+    return {
+        r: (num >> 16) & 255,
+        g: (num >> 8) & 255,
+        b: num & 255
+    };
+}
+
+function rgbToHex(r, g, b) {
+    const clamp = val => Math.max(0, Math.min(255, Math.round(val)));
+    return '#' + [clamp(r), clamp(g), clamp(b)]
+        .map(x => x.toString(16).padStart(2, '0').toUpperCase())
+        .join('');
+}
+
+function hexToHsl(hex) {
+    const { r, g, b } = hexToRgb(hex);
+    const rNorm = r / 255, gNorm = g / 255, bNorm = b / 255;
+    const max = Math.max(rNorm, gNorm, bNorm);
+    const min = Math.min(rNorm, gNorm, bNorm);
+    const delta = max - min;
+    let h = 0, s = 0;
+    const l = (max + min) / 2;
+    if (delta !== 0) {
+        s = l > 0.5 ? delta / (2 - max - min) : delta / (max + min);
+        switch (max) {
+            case rNorm: h = ((gNorm - bNorm) / delta + (gNorm < bNorm ? 6 : 0)) / 6; break;
+            case gNorm: h = ((bNorm - rNorm) / delta + 2) / 6; break;
+            case bNorm: h = ((rNorm - gNorm) / delta + 4) / 6; break;
+        }
+    }
+    return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+}
+
+function hslToHex(h, s, l) {
+    const sNorm = s / 100, lNorm = l / 100;
+    const c = (1 - Math.abs(2 * lNorm - 1)) * sNorm;
+    const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+    const m = lNorm - c / 2;
+    let r = 0, g = 0, b = 0;
+    if (h >= 0 && h < 60) { r = c; g = x; b = 0; }
+    else if (h >= 60 && h < 120) { r = x; g = c; b = 0; }
+    else if (h >= 120 && h < 180) { r = 0; g = c; b = x; }
+    else if (h >= 180 && h < 240) { r = 0; g = x; b = c; }
+    else if (h >= 240 && h < 300) { r = x; g = 0; b = c; }
+    else if (h >= 300 && h < 360) { r = c; g = 0; b = x; }
+    return rgbToHex((r + m) * 255, (g + m) * 255, (b + m) * 255);
+}
+
+function lighten(hex, amount) {
+    const hsl = hexToHsl(hex);
+    return hslToHex(hsl.h, hsl.s, Math.min(100, hsl.l + amount));
+}
+
+function darken(hex, amount) {
+    const hsl = hexToHsl(hex);
+    return hslToHex(hsl.h, hsl.s, Math.max(0, hsl.l - amount));
+}
+
+function isLight(hex) {
+    const { r, g, b } = hexToRgb(hex);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    return luminance > 0.5;
+}
+
+function getContrastColor(hex) {
+    return isLight(hex) ? '#000000' : '#FFFFFF';
+}
+
+function mix(hex1, hex2, weight = 0.5) {
+    const rgb1 = hexToRgb(hex1);
+    const rgb2 = hexToRgb(hex2);
+    return rgbToHex(
+        rgb1.r * weight + rgb2.r * (1 - weight),
+        rgb1.g * weight + rgb2.g * (1 - weight),
+        rgb1.b * weight + rgb2.b * (1 - weight)
+    );
+}
+
+// Theme Management
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+}
+
+function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+}
+
+// Toast Notification
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastMessage').textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+// Copy to Clipboard
+async function copyToClipboard(text) {
+    try {
+        await navigator.clipboard.writeText(text);
+        showToast(`Copied: ${text}`);
+    } catch (err) {
+        console.error('Failed to copy:', err);
+    }
+}
+
+// Copy Install Command
+function copyInstall() {
+    copyToClipboard('npm install mat-design-colors');
+}
+
+// Render Color Grid
+function renderColorGrid() {
+    const grid = document.getElementById('colorGrid');
+    if (!grid) return;
+
+    const standardShades = ['S50', 'S100', 'S200', 'S300', 'S400', 'S500', 'S600', 'S700', 'S800', 'S900'];
+    const accentShades = ['SA100', 'SA200', 'SA400', 'SA700'];
+
+    Object.entries(MaterialColor).forEach(([colorName, shades]) => {
+        const family = document.createElement('div');
+        family.className = 'color-family';
+        family.dataset.colorName = colorName.toLowerCase();
+
+        const primaryColor = shades.S500;
+        const headerTextColor = getContrastColor(primaryColor);
+        const hasAccents = !!shades.SA100;
+        const shadeCount = Object.keys(shades).length;
+
+        // Build shade grid
+        const allShades = hasAccents
+            ? [...standardShades, ...accentShades]
+            : standardShades;
+
+        const shadeElements = allShades.map(shade => {
+            const hex = shades[shade];
+            if (!hex) return '';
+            const textColor = getContrastColor(hex);
+            const displayShade = shade.replace('S', '').replace('A', 'A');
+            return `
+                <div class="shade" 
+                     style="background: ${hex}; color: ${textColor};"
+                     data-hex="${hex}"
+                     onclick="copyToClipboard('${hex}')"
+                     title="${shade}: ${hex}">
+                    ${displayShade}
+                </div>
+            `;
+        }).join('');
+
+        family.innerHTML = `
+            <div class="color-header" style="background: ${primaryColor}; color: ${headerTextColor};">
+                <span>${colorName.replace(/_/g, ' ')}</span>
+                <span class="shade-count">${shadeCount} shades</span>
+            </div>
+            <div class="shade-grid">
+                ${shadeElements}
+            </div>
+        `;
+
+        grid.appendChild(family);
+    });
+}
+
+// Search Functionality
+function initSearch() {
+    const searchInput = document.getElementById('searchInput');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        const families = document.querySelectorAll('.color-family');
+
+        families.forEach(family => {
+            const colorName = family.dataset.colorName;
+            const matches = colorName.includes(query) || query === '';
+            family.classList.toggle('hidden', !matches);
+        });
+    });
+
+    // Keyboard shortcut
+    document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            searchInput.focus();
+        }
+    });
+}
+
+// Render Utilities Demo
+function renderUtilitiesDemo() {
+    const demo = document.getElementById('utilitiesDemo');
+    if (!demo) return;
+
+    const baseColor = MaterialColor.BLUE.S500;
+
+    const utilities = [
+        {
+            title: 'Lighten',
+            colors: [
+                { hex: baseColor, label: 'Base' },
+                { hex: lighten(baseColor, 10), label: '+10%' },
+                { hex: lighten(baseColor, 20), label: '+20%' },
+                { hex: lighten(baseColor, 30), label: '+30%' },
+            ],
+            code: `lighten('#2196F3', 20)`
+        },
+        {
+            title: 'Darken',
+            colors: [
+                { hex: baseColor, label: 'Base' },
+                { hex: darken(baseColor, 10), label: '-10%' },
+                { hex: darken(baseColor, 20), label: '-20%' },
+                { hex: darken(baseColor, 30), label: '-30%' },
+            ],
+            code: `darken('#2196F3', 20)`
+        },
+        {
+            title: 'Mix Colors',
+            colors: [
+                { hex: MaterialColor.RED.S500, label: 'Red' },
+                { hex: mix(MaterialColor.RED.S500, MaterialColor.BLUE.S500, 0.75), label: '75%' },
+                { hex: mix(MaterialColor.RED.S500, MaterialColor.BLUE.S500, 0.5), label: '50%' },
+                { hex: mix(MaterialColor.RED.S500, MaterialColor.BLUE.S500, 0.25), label: '25%' },
+                { hex: MaterialColor.BLUE.S500, label: 'Blue' },
+            ],
+            code: `mix('#F44336', '#2196F3', 0.5)`
+        },
+        {
+            title: 'Hex to RGB',
+            colors: [{ hex: baseColor, label: 'Blue 500' }],
+            code: `hexToRgb('#2196F3')\n// { r: 33, g: 150, b: 243 }`
+        },
+        {
+            title: 'Contrast Color',
+            colors: [
+                { hex: '#FFFFFF', label: '→ Black', textColor: '#000000' },
+                { hex: '#FFEB3B', label: '→ Black', textColor: '#000000' },
+                { hex: '#1A237E', label: '→ White', textColor: '#FFFFFF' },
+                { hex: '#000000', label: '→ White', textColor: '#FFFFFF' },
+            ],
+            code: `getContrastColor('#F44336')\n// "#FFFFFF"`
+        },
+        {
+            title: 'Alpha Channel',
+            colors: [
+                { hex: `rgba(33, 150, 243, 1)`, label: '100%', isRgba: true },
+                { hex: `rgba(33, 150, 243, 0.75)`, label: '75%', isRgba: true },
+                { hex: `rgba(33, 150, 243, 0.5)`, label: '50%', isRgba: true },
+                { hex: `rgba(33, 150, 243, 0.25)`, label: '25%', isRgba: true },
+            ],
+            code: `alpha('#2196F3', 0.5)\n// "rgba(33, 150, 243, 0.5)"`
+        },
+    ];
+
+    utilities.forEach(util => {
+        const card = document.createElement('div');
+        card.className = 'utility-card';
+        card.innerHTML = `
+            <h3>${util.title}</h3>
+            <div class="color-preview">
+                ${util.colors.map(c => `
+                    <div class="preview-swatch" 
+                         style="background: ${c.hex}; color: ${c.textColor || getContrastColor(c.isRgba ? '#2196F3' : c.hex)};">
+                        ${c.label}
+                    </div>
+                `).join('')}
+            </div>
+            <div class="utility-code">${util.code}</div>
+        `;
+        demo.appendChild(card);
+    });
+}
+
+// Generate CSS
+function generateCSS() {
+    const prefix = document.getElementById('cssPrefix')?.value || 'md';
+    const type = document.getElementById('cssType')?.value || 'variables';
+    const output = document.getElementById('cssOutput');
+    if (!output) return;
+
+    let css = '';
+
+    if (type === 'variables') {
+        css = ':root {\n';
+        Object.entries(MaterialColor).forEach(([colorName, shades]) => {
+            const cssColorName = colorName.toLowerCase().replace(/_/g, '-');
+            Object.entries(shades).forEach(([shade, hex]) => {
+                const cssShade = shade.toLowerCase().replace('s', '');
+                css += `  --${prefix}-${cssColorName}-${cssShade}: ${hex};\n`;
+            });
+        });
+        css += '}';
+    } else if (type === 'classes-bg') {
+        Object.entries(MaterialColor).forEach(([colorName, shades]) => {
+            const cssColorName = colorName.toLowerCase().replace(/_/g, '-');
+            Object.entries(shades).forEach(([shade, hex]) => {
+                const cssShade = shade.toLowerCase().replace('s', '');
+                css += `.${prefix}-${cssColorName}-${cssShade} { background-color: ${hex}; }\n`;
+            });
+        });
+    } else if (type === 'classes-text') {
+        Object.entries(MaterialColor).forEach(([colorName, shades]) => {
+            const cssColorName = colorName.toLowerCase().replace(/_/g, '-');
+            Object.entries(shades).forEach(([shade, hex]) => {
+                const cssShade = shade.toLowerCase().replace('s', '');
+                css += `.${prefix}-${cssColorName}-${cssShade} { color: ${hex}; }\n`;
+            });
+        });
+    }
+
+    output.textContent = css;
+}
+
+// Copy CSS Output
+function copyCSSOutput() {
+    const output = document.getElementById('cssOutput');
+    if (output) {
+        copyToClipboard(output.textContent);
+    }
+}
+
+// Smooth scroll for anchor links
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    renderColorGrid();
+    initSearch();
+    renderUtilitiesDemo();
+    generateCSS();
+    initSmoothScroll();
+
+    // Theme toggle
+    document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
+});

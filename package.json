@@ -1,16 +1,21 @@
 {
   "name": "mat-design-colors",
-  "version": "1.0.2",
-  "description": "A Material Design color palette accessor with intuitive API for JavaScript and TypeScript.",
+  "version": "2.0.0",
+  "description": "A comprehensive Material Design color palette library with intuitive API, color utilities, and CSS generation for JavaScript and TypeScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run build && npm test"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/sitharaj88/mat-design-colors.git"
+  },
+  "homepage": "https://sitharaj88.github.io/mat-design-colors",
+  "bugs": {
+    "url": "https://github.com/sitharaj88/mat-design-colors/issues"
   },
   "keywords": [
     "material",
@@ -18,7 +23,14 @@
     "colors",
     "palette",
     "typescript",
-    "javascript"
+    "javascript",
+    "css",
+    "color-palette",
+    "material-design",
+    "color-utilities",
+    "color-manipulation",
+    "hex-to-rgb",
+    "color-conversion"
   ],
   "author": "Sitharaj Seenivasan",
   "license": "Apache-2.0",
@@ -27,5 +39,13 @@
     "jest": "^29.7.0",
     "ts-jest": "^29.2.4",
     "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

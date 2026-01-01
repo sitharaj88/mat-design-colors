@@ -11,8 +11,54 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * 
- * Copyright 2024 Sitharaj Seenivasan 
+ * Copyright 2025 Sitharaj Seenivasan 
  */
 
+// Core exports
 export { ColorShade } from './ColorShade';
 export { MaterialColor } from './MaterialColor';
+
+// Utility functions for color manipulation
+export {
+    hexToRgb,
+    rgbToHex,
+    hexToHsl,
+    hslToHex,
+    lighten,
+    darken,
+    alpha,
+    getLuminance,
+    isLight,
+    isDark,
+    getContrastColor,
+    getContrastRatio,
+    mix,
+    invert,
+    grayscale,
+    saturate,
+    desaturate,
+    adjustHue,
+    complement,
+} from './utils';
+
+// Type exports from utils
+export type { RGB, HSL, RGBA } from './utils';
+
+// Helper functions for working with palettes
+export {
+    getAllColors,
+    getAllShades,
+    getColor,
+    getColorPalette,
+    searchColors,
+    findColorByHex,
+    generateCSSVariables,
+    generateCSSClasses,
+    getPrimaryShade,
+    getColorWithContrast,
+    getRandomColor,
+    getColorsByCategory,
+} from './helpers';
+
+// Type exports from helpers
+export type { ColorName, ColorPaletteEntry, ColorSearchResult } from './helpers';

@@ -11,9 +11,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * 
- * Copyright 2024 Sitharaj Seenivasan 
+ * Copyright 2025 Sitharaj Seenivasan 
  */
 
+/**
+ * Enum representing all available Material Design color shades.
+ * 
+ * Standard shades range from S50 (lightest) to S900 (darkest).
+ * Accent shades (SA100, SA200, SA400, SA700) are available for most colors
+ * and provide vibrant, saturated alternatives.
+ * 
+ * @example
+ * ```typescript
+ * import { MaterialColor, ColorShade } from 'mat-design-colors';
+ * 
+ * // Use standard shade
+ * const red500 = MaterialColor.RED[ColorShade.S500];
+ * 
+ * // Use accent shade
+ * const redAccent = MaterialColor.RED[ColorShade.SA200];
+ * ```
+ */
 export enum ColorShade {
   S50 = 'S50',
   S100 = 'S100',

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mat Design Colors - Material Design Color Palette for JavaScript & TypeScript</title>
+    <meta name="description"
+        content="A comprehensive Material Design color palette library with intuitive API, powerful color utilities, and CSS generation for JavaScript and TypeScript projects.">
+    <meta name="keywords" content="material design, colors, palette, javascript, typescript, css, color utilities">
+    <meta name="author" content="Sitharaj Seenivasan">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mat Design Colors">
+    <meta property="og:description" content="Material Design color palette for JavaScript & TypeScript">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sitharaj88.github.io/mat-design-colors">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+            </path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">v2.0.0</span>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Mat Design Colors</span>
+                </h1>
+                <p class="hero-subtitle">
+                    The complete Material Design color palette for JavaScript & TypeScript.
+                    19 color families, powerful utilities, and CSS generation.
+                </p>
+                <div class="hero-actions">
+                    <a href="#colors" class="btn btn-primary">Explore Colors</a>
+                    <a href="https://github.com/sitharaj88/mat-design-colors" class="btn btn-secondary" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+                <div class="install-code">
+                    <code>npm install mat-design-colors</code>
+                    <button class="copy-btn" onclick="copyInstall()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                            height="18">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>19 Color Families</h3>
+                    <p>Complete Material Design palette with all shades from 50 to 900 plus accent colors</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Color Utilities</h3>
+                    <p>Lighten, darken, mix colors, calculate contrast, and more with powerful utility functions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>TypeScript Ready</h3>
+                    <p>Full TypeScript support with comprehensive type definitions and JSDoc documentation</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>CSS Generation</h3>
+                    <p>Generate CSS custom properties and utility classes automatically</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-container container">
+        <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+            <input type="text" id="searchInput" placeholder="Search colors..." autocomplete="off">
+            <span class="search-shortcut">⌘K</span>
+        </div>
+    </div>
+
+    <!-- Colors Section -->
+    <section class="colors-section" id="colors">
+        <div class="container">
+            <h2 class="section-title">Color Palette</h2>
+            <p class="section-subtitle">Click any color to copy its hex code to your clipboard</p>
+
+            <div class="color-grid" id="colorGrid"></div>
+        </div>
+    </section>
+
+    <!-- Utilities Section -->
+    <section class="utilities-section" id="utilities">
+        <div class="container">
+            <h2 class="section-title">Color Utilities</h2>
+            <p class="section-subtitle">Powerful functions for color manipulation and analysis</p>
+
+            <div class="utilities-demo" id="utilitiesDemo"></div>
+        </div>
+    </section>
+
+    <!-- CSS Generator Section -->
+    <section class="generator-section" id="generator">
+        <div class="container">
+            <h2 class="section-title">CSS Generator</h2>
+            <p class="section-subtitle">Generate ready-to-use CSS for your projects</p>
+
+            <div class="generator-card">
+                <div class="generator-controls">
+                    <div class="control-group">
+                        <label>Prefix</label>
+                        <input type="text" id="cssPrefix" value="md" placeholder="Variable prefix">
+                    </div>
+                    <div class="control-group">
+                        <label>Output Type</label>
+                        <select id="cssType">
+                            <option value="variables">CSS Variables</option>
+                            <option value="classes-bg">Background Classes</option>
+                            <option value="classes-text">Text Color Classes</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="generateCSS()">Generate</button>
+                    <button class="btn btn-secondary" onclick="copyCSSOutput()">Copy All</button>
+                </div>
+                <pre class="css-output" id="cssOutput">/* Click "Generate" to create CSS */</pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="quickstart-section" id="quickstart">
+        <div class="container">
+            <h2 class="section-title">Quick Start</h2>
+
+            <div class="code-examples">
+                <div class="code-example">
+                    <h3>Basic Usage</h3>
+                    <pre><code><span class="keyword">import</span> { MaterialColor, ColorShade } <span class="keyword">from</span> <span class="string">'mat-design-colors'</span>;
+
+<span class="comment">// Access any color</span>
+<span class="keyword">const</span> red500 = MaterialColor.RED[ColorShade.S500];
+<span class="comment">// "#F44336"</span>
+
+<span class="comment">// Accent shades</span>
+<span class="keyword">const</span> pinkA200 = MaterialColor.PINK[ColorShade.SA200];
+<span class="comment">// "#FF4081"</span></code></pre>
+                </div>
+
+                <div class="code-example">
+                    <h3>Color Utilities</h3>
+                    <pre><code><span class="keyword">import</span> { lighten, darken, alpha, mix } <span class="keyword">from</span> <span class="string">'mat-design-colors'</span>;
+
+<span class="comment">// Lighten a color</span>
+<span class="keyword">const</span> lighter = <span class="function">lighten</span>(<span class="string">'#F44336'</span>, 20);
+
+<span class="comment">// Add transparency</span>
+<span class="keyword">const</span> transparent = <span class="function">alpha</span>(<span class="string">'#F44336'</span>, 0.5);
+<span class="comment">// "rgba(244, 67, 54, 0.5)"</span>
+
+<span class="comment">// Mix two colors</span>
+<span class="keyword">const</span> mixed = <span class="function">mix</span>(<span class="string">'#FF0000'</span>, <span class="string">'#0000FF'</span>);</code></pre>
+                </div>
+
+                <div class="code-example">
+                    <h3>Helper Functions</h3>
+                    <pre><code><span class="keyword">import</span> { 
+  getColor, 
+  getContrastColor,
+  generateCSSVariables 
+} <span class="keyword">from</span> <span class="string">'mat-design-colors'</span>;
+
+<span class="comment">// Get color by name</span>
+<span class="keyword">const</span> blue = <span class="function">getColor</span>(<span class="string">'BLUE'</span>, <span class="string">'S500'</span>);
+
+<span class="comment">// Auto contrast text color</span>
+<span class="keyword">const</span> textColor = <span class="function">getContrastColor</span>(<span class="string">'#F44336'</span>);
+<span class="comment">// "#FFFFFF"</span>
+
+<span class="comment">// Generate CSS variables</span>
+<span class="keyword">const</span> css = <span class="function">generateCSSVariables</span>();</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">🎨</span>
+                    <span class="footer-name">Mat Design Colors</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/sitharaj88/mat-design-colors" target="_blank">GitHub</a>
+                    <a href="https://www.npmjs.com/package/mat-design-colors" target="_blank">npm</a>
+                    <a href="https://github.com/sitharaj88/mat-design-colors/issues" target="_blank">Issues</a>
+                </div>
+                <p class="footer-copy">
+                    Made with ❤️ by <a href="https://github.com/sitharaj88" target="_blank">Sitharaj Seenivasan</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="toastMessage">Copied!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
